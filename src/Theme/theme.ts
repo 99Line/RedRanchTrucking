@@ -1,5 +1,22 @@
 import { createTheme } from '@mui/material/styles'
 
+declare module '@mui/material/styles' {
+  interface Theme {
+    extraBackgrounds: {
+      footerColor: React.CSSProperties['color']
+      burgundyColor: React.CSSProperties['color']
+      grayColor: React.CSSProperties['color']
+    }
+  }
+  interface ThemeOptions {
+    extraBackgrounds: {
+      footerColor: React.CSSProperties['color']
+      burgundyColor: React.CSSProperties['color']
+      grayColor: React.CSSProperties['color']
+    }
+  }
+}
+
 export const theme = createTheme({
   palette: {
     primary: {
@@ -19,8 +36,18 @@ export const theme = createTheme({
       lineHeight: '133.4%',
     },
     h2: {},
-    h3: {},
-    body1: {},
+    h3: {
+      fontSize: '36px',
+      fontStyle: 'normal',
+      fontWeight: 700,
+      lineHeight: '40px',
+    },
+    body1: {
+      fontSize: '24px',
+      fontWeight: 600,
+      fontStyle: 'normal',
+      lineHeight: '40px',
+    },
     body2: {},
   },
   components: {
@@ -61,5 +88,10 @@ export const theme = createTheme({
         },
       },
     },
+  },
+  extraBackgrounds: {
+    footerColor: '#323232',
+    burgundyColor: '#A93235',
+    grayColor: '#F1F1F1',
   },
 })
