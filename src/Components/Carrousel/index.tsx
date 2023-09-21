@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box';
-import Image1 from '../Assets/Image1.jpeg'
+import Image1 from 'Assets/Image1.jpeg'
 
 export default function Carrousel() {
     //TODO Change colors to theme
