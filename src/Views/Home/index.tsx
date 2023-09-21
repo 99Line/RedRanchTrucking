@@ -1,4 +1,4 @@
-import redTruck from '@Assets/red-truck.jpg'
+import redTruck from '../../Assets/red-truck.jpg'
 
 const Home = () => {
   return (

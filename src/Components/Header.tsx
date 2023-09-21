@@ -1,8 +1,7 @@
 import Box from '@mui/material/Box';
-import Carrousel from '@Components/Carrousel';
-import Logo from '@Assets/logo.png'
-import Tabs from '@Components/Tabs'
-
+import Carrousel from './Carrousel';
+import Logo from '../Assets/logo.png'
+import Tabs from '../Components/Tabs'
 export default function Header() {
     //TODO Change colors to theme
   return (

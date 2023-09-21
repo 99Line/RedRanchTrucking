@@ -7,10 +7,10 @@ import {
   CustomTextField,
   CustomErrorMessage,
   CheckboxesContainer,
-} from '@Components/CustomForm/styled'
-import { validateEmail, validationSchema } from '@Components/CustomForm/utils'
-import { FormValues } from '@Types'
-import CustomCheckbox from '@Components/CustomCheckbox'
+} from './styled'
+import { validateEmail, validationSchema } from './utils'
+import { FormValues } from '../../Types'
+import CustomCheckbox from '../CustomCheckbox'
 
 const CustomForm = () => {
   const handleSubmit = (values: FormValues) => {
