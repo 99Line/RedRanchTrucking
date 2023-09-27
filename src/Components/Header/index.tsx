@@ -1,17 +1,25 @@
-import Box from '@mui/material/Box';
-import Carrousel from 'Components/Carrousel';
-import Logo from 'Assets/logo.png'
-import Tabs from 'Components/Tabs'
+import Carrousel from "Components/Carrousel";
+import Logo from "Assets/logo.png";
+import Tabs from "Components/Tabs";
+import { ContainerBox, SubContainerBox, Image, GridItem } from "./styled";
+import Grid from "@mui/material/Grid";
 
 export default function Header() {
-    //TODO Change colors to theme
+  //TODO Change colors to theme
   return (
-    <Box sx={{ bgcolor: '#cfe8fc', height: '100vh' }} >
-        <Box  sx={{ bgcolor: 'black', height: '30vh', px:'43px' }}>
-            <img src={Logo} className='Logo' alt='Red Ranch Trucking Logo'/>
-            <Tabs/>
-        </Box>
-        <Carrousel></Carrousel>
-    </Box>
-  )
+    <ContainerBox>
+      <SubContainerBox>
+        <Grid container spacing={2}>
+          <GridItem item xs={6}>
+            <Image src={Logo} alt="Red Ranch Trucking Logo" />
+          </GridItem>
+          <GridItem item xs={6}>
+            <Image src={Logo} alt="Red Ranch Trucking Logo" />
+          </GridItem>
+        </Grid>
+      </SubContainerBox>
+      <Tabs />
+      <Carrousel></Carrousel>
+    </ContainerBox>
+  );
 }

@@ -36,17 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.Carrousel-Images{
-  height: 100px;
-}
-
-.Logo{
-  height: auto;
-}
-
-.Tabs-Span {
-  max-width: 40;
-  width: '100%';
-  background-color: '#635ee7';
-}
