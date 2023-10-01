@@ -15,8 +15,8 @@ export const SubContainerBox = styled(Box)`
   display: flex;
   flex: 1 0 auto;
   max-height: 176px;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 `;
 
 export const Image = styled.img`
@@ -40,3 +40,12 @@ export const BorderBox = styled(Box)((props) => ({
   borderWidth: "0 0 5px 0",
   background: theme.extraBackgrounds.blackColor,
 }));
+
+export const DataContainer = styled.div``;
+
+export const Line = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+`;

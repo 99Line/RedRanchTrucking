@@ -7,6 +7,8 @@ export const ContainerBox = styled(Box)`
   flex: 1 1 auto;
   display: flex;
   overflow: hidden;
+  min-height: 300px;
+  position: relative;
 `;
 export const Image = styled.img`
   object-fit: cover;

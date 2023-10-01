@@ -112,6 +112,13 @@ export const theme = createTheme({
         },
       },
     },
+    MuiPaginationItem: {
+      styleOverrides: {
+        root: {
+          color: "#F1F1F1",
+        },
+      },
+    },
   },
   extraBackgrounds: {
     footerColor: "#323232",
