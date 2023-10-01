@@ -7,6 +7,6 @@ export const CustomTab = styled(Tab)`
 `;
 
 export const CustomTabs = styled(Tabs)({
-  marginLeft: "43px",
+  paddingLeft: "5vw",
   paddingBottom: "10px",
 });

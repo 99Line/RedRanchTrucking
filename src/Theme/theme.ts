@@ -94,6 +94,13 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: "#323232",
+          width: "fit-content",
+        },
+        flexContainer: {
+          width: "fit-content",
+        },
+        scroller: {
+          width: "fit-content",
         },
       },
     },
@@ -102,7 +109,6 @@ export const theme = createTheme({
         root: {
           color: "#F1F1F1",
           display: "flex",
-          justifyContent: "center",
         },
       },
     },

@@ -10,15 +10,18 @@ export const ContainerBox = styled(Box)`
 `;
 
 export const SubContainerBox = styled(Box)`
-  height: 25vh;
-  margin-left: 43px;
-  margin-right: 43px;
+  margin-left: 5vw;
+  margin-right: 5vw;
   display: flex;
   flex: 1 0 auto;
+  max-height: 176px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 `;
 
 export const Image = styled.img`
-  height: 70%;
+  min-height: 80px;
+  height: 17.2vh;
   max-height: 150px;
 `;
 
@@ -29,8 +32,10 @@ export const GridItem = styled(Grid)((props) => ({
   display: "flex",
 }));
 
-export const BorderBox = styled(Box)({
+export const BorderBox = styled(Box)((props) => ({
+  justifyContent: props.content,
+  display: "flex",
   border: "solid",
   borderColor: theme.extraBackgrounds.burgundyColor,
   borderWidth: "0 0 5px 0",
-});
+}));

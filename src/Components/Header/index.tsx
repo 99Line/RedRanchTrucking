@@ -9,22 +9,30 @@ import {
   BorderBox,
 } from "./styled";
 import Grid from "@mui/material/Grid";
+import { useMobile } from "Utils/mixins";
 
 export default function Header() {
-  //TODO Change colors to theme
+  const mobile = useMobile();
+
   return (
     <ContainerBox>
       <SubContainerBox>
         <Grid container spacing={2}>
-          <GridItem item xs={6} content={"start"}>
+          <GridItem
+            item
+            xs={mobile ? 12 : 6}
+            content={mobile ? "center" : "start"}
+          >
             <Image src={Logo} alt="Red Ranch Trucking Logo" />
           </GridItem>
-          <GridItem item xs={6} content={"end"}>
-            <Image src={Logo} alt="Red Ranch Trucking Logo" />
-          </GridItem>
+          {mobile || (
+            <GridItem item xs={6} content={"end"}>
+              <Image src={Logo} alt="Red Ranch Trucking Logo" />
+            </GridItem>
+          )}
         </Grid>
       </SubContainerBox>
-      <BorderBox>
+      <BorderBox content={mobile ? "center" : undefined}>
         <Tabs />
       </BorderBox>
       <Carrousel></Carrousel>

@@ -1,5 +1,6 @@
 import * as React from "react";
 import { CustomTab, CustomTabs } from "./styled";
+
 export default function ScrollableTabsButtonAuto() {
   const [value, setValue] = React.useState(0);
 
