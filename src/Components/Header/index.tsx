@@ -1,7 +1,13 @@
 import Carrousel from "Components/Carrousel";
 import Logo from "Assets/logo.png";
 import Tabs from "Components/Tabs";
-import { ContainerBox, SubContainerBox, Image, GridItem } from "./styled";
+import {
+  ContainerBox,
+  SubContainerBox,
+  Image,
+  GridItem,
+  BorderBox,
+} from "./styled";
 import Grid from "@mui/material/Grid";
 
 export default function Header() {
@@ -10,15 +16,17 @@ export default function Header() {
     <ContainerBox>
       <SubContainerBox>
         <Grid container spacing={2}>
-          <GridItem item xs={6}>
+          <GridItem item xs={6} content={"start"}>
             <Image src={Logo} alt="Red Ranch Trucking Logo" />
           </GridItem>
-          <GridItem item xs={6}>
+          <GridItem item xs={6} content={"end"}>
             <Image src={Logo} alt="Red Ranch Trucking Logo" />
           </GridItem>
         </Grid>
       </SubContainerBox>
-      <Tabs />
+      <BorderBox>
+        <Tabs />
+      </BorderBox>
       <Carrousel></Carrousel>
     </ContainerBox>
   );

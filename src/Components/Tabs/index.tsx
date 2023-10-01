@@ -1,6 +1,5 @@
 import * as React from "react";
-import Tabs from "@mui/material/Tabs";
-import { CustomTab } from "./styled";
+import { CustomTab, CustomTabs } from "./styled";
 export default function ScrollableTabsButtonAuto() {
   const [value, setValue] = React.useState(0);
 
@@ -9,7 +8,7 @@ export default function ScrollableTabsButtonAuto() {
   };
 
   return (
-    <Tabs
+    <CustomTabs
       value={value}
       onChange={handleChange}
       variant="scrollable"
@@ -34,6 +33,6 @@ export default function ScrollableTabsButtonAuto() {
         }}
         label="Services"
       />
-    </Tabs>
+    </CustomTabs>
   );
 }

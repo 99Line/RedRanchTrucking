@@ -3,24 +3,34 @@ import { Box, Grid } from "@mui/material";
 import { theme } from "Theme/theme";
 
 export const ContainerBox = styled(Box)`
+  background: ${theme.extraBackgrounds.blackColor};
   height: 100vh;
+  display: flex;
+  flex-flow: column;
 `;
 
 export const SubContainerBox = styled(Box)`
-  height: 30vh;
-  marginhorizontal: 43;
+  height: 25vh;
+  margin-left: 43px;
+  margin-right: 43px;
   display: flex;
-  background: ${theme.extraBackgrounds.blackColor};
+  flex: 1 0 auto;
 `;
 
 export const Image = styled.img`
-  height: 50%;
-  max-height: 120px;
+  height: 70%;
+  max-height: 150px;
 `;
 
-export const GridItem = styled(Grid)({
+export const GridItem = styled(Grid)((props) => ({
   flex: "1 1 auto",
-  justifyContent: "center",
+  justifyContent: props.content,
   alignItems: "center",
   display: "flex",
+}));
+
+export const BorderBox = styled(Box)({
+  border: "solid",
+  borderColor: theme.extraBackgrounds.burgundyColor,
+  borderWidth: "0 0 5px 0",
 });
