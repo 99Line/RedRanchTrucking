@@ -38,4 +38,5 @@ export const BorderBox = styled(Box)((props) => ({
   border: "solid",
   borderColor: theme.extraBackgrounds.burgundyColor,
   borderWidth: "0 0 5px 0",
+  background: theme.extraBackgrounds.blackColor,
 }));
