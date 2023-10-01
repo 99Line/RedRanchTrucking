@@ -7,3 +7,7 @@ export const CustomCard = styled.div({
     marginLeft: 'auto',
     marginRight: 'auto',
 })
+
+export const ContentPadding = styled.div({
+    padding: '28px 46px'
+})
