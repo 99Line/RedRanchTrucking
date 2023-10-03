@@ -5,7 +5,7 @@ import Header from "Components/Header";
 const Router = () => {
   return (
     <BrowserRouter>
-      <Header></Header>
+      <Header />
       <Routes>
         <Route index element={<Home />}></Route>
       </Routes>
