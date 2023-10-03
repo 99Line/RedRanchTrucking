@@ -1,4 +1,4 @@
-import { CustomCard } from './styled'
+import { ContentPadding, CustomCard } from './styled'
 
 interface cardProps {
     children: any
@@ -6,6 +6,10 @@ interface cardProps {
 
 export default function Card(props: cardProps) {
   return (
-   <CustomCard>{props.children}</CustomCard>
+    <CustomCard>
+        <ContentPadding>
+            {props.children}
+        </ContentPadding>
+    </CustomCard>
   )
 }
