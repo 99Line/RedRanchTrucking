@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import { theme } from '../../Theme/theme'
 import Typography from '@mui/material/Typography'
+import CheckIcon from '@mui/icons-material/Check';
 
 export const ServicesContainer = styled.div({
     background: theme.extraBackgrounds.grayColor,
@@ -21,3 +22,8 @@ font-family: Roboto;
 font-size: 20px;
 font-style: normal;
 font-weight: 300;`
+
+export const CheckCustom = styled(CheckIcon)({
+    fontSize: '20px',
+    color: theme.extraBackgrounds.burgundyColor
+})

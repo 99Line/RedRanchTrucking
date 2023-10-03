@@ -1,7 +1,7 @@
 import React from 'react'
 import { ServicesContainer, Line } from './styled'
 import Card from '../../Components/Card'
-import CheckIcon from '@mui/icons-material/Check';
+import { CheckCustom } from './styled';
 import { CustomTypography } from './styled';
 import { theme } from '../../Theme/theme';
 
@@ -10,35 +10,35 @@ export default function Services() {
     <ServicesContainer>
       <Card>
         <Line>
-          <CheckIcon style={{fontSize: '20px', color: theme.extraBackgrounds.burgundyColor}}/>
+          <CheckCustom/>
           <CustomTypography>Truckload delivery</CustomTypography>
         </Line>
         <Line>
-          <CheckIcon style={{fontSize: '20px', color: theme.extraBackgrounds.burgundyColor}}/>
+          <CheckCustom/>
           <CustomTypography>Trash Removal</CustomTypography>
         </Line>
         <Line>
-          <CheckIcon style={{fontSize: '20px', color: theme.extraBackgrounds.burgundyColor}}/>
+          <CheckCustom/>
           <CustomTypography>Aggregates delivery</CustomTypography>
         </Line>
         <Line>
-          <CheckIcon style={{fontSize: '20px', color: theme.extraBackgrounds.burgundyColor}}/>
+          <CheckCustom/>
           <CustomTypography>Landscaping decorative rock (samples available)</CustomTypography>
         </Line>
         <Line>
-          <CheckIcon style={{fontSize: '20px', color: theme.extraBackgrounds.burgundyColor}}/>
+          <CheckCustom/>
           <CustomTypography>Dirty Removal</CustomTypography>
         </Line>
         <Line>
-          <CheckIcon style={{fontSize: '20px', color: theme.extraBackgrounds.burgundyColor}}/>
+          <CheckCustom/>
           <CustomTypography>Dirty Delivery</CustomTypography>
         </Line>
         <Line>
-          <CheckIcon style={{fontSize: '20px', color: theme.extraBackgrounds.burgundyColor}}/>
+          <CheckCustom/>
           <CustomTypography>Construction Material Removal</CustomTypography>
         </Line>
         <Line>
-          <CheckIcon style={{fontSize: '20px', color: theme.extraBackgrounds.burgundyColor}}/>
+          <CheckCustom/>
           <CustomTypography>Wood Chips and Mulch Delivery</CustomTypography>
         </Line>
       </Card>
