@@ -14,9 +14,7 @@ import Grid from "@mui/material/Grid";
 import { Typography } from "@mui/material";
 import { useMobile } from "Utils/mixins";
 import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
-import CopyrightOutlinedIcon from "@mui/icons-material/CopyrightOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import { theme } from "Theme/theme";
 
 export default function Header() {
