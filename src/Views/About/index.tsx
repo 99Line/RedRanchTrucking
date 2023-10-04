@@ -1,8 +1,7 @@
 import React from "react";
 import { AboutContainer, Line } from "./styled";
 import Card from "../../Components/Card";
-import { CheckCustom } from "./styled";
-import { CustomTypography } from "./styled";
+import { CustomTypography, SubCustomTypography, SubLine } from "./styled";
 
 export default function Services() {
   return (
@@ -18,9 +17,11 @@ export default function Services() {
             commercial project.
           </CustomTypography>
         </Line>
-        <Line>
-          <CustomTypography>Sincerely, The Meraz Family</CustomTypography>
-        </Line>
+        <SubLine>
+          <SubCustomTypography>
+            Sincerely, <br /> The Meraz Family
+          </SubCustomTypography>
+        </SubLine>
       </Card>
     </AboutContainer>
   );
