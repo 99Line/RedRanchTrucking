@@ -16,6 +16,9 @@ import { useMobile } from "Utils/mixins";
 import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import { theme } from "Theme/theme";
+import { info } from "Utils/strings";
+
+const { ADDRESS, CELPHONE, EMAIL } = info;
 
 export default function Header() {
   const mobile = useMobile();
@@ -39,26 +42,30 @@ export default function Header() {
                   <LocalPhoneOutlinedIcon
                     style={{ color: "white", fontSize: "20px" }}
                   />
-                  <Typography
-                    variant="body1"
-                    color={theme.extraBackgrounds.grayColor}
-                    sx={{ fontSize: "20px" }}
-                  >
-                    (602) 535-7231
-                  </Typography>
+                  <a href={`tel:${EMAIL}`} style={{ textDecoration: "none" }}>
+                    <Typography
+                      variant="body1"
+                      color={theme.extraBackgrounds.grayColor}
+                      sx={{ fontSize: "20px" }}
+                    >
+                      {CELPHONE}
+                    </Typography>
+                  </a>
                 </Line>
                 {/*TODO Add links */}
                 <Line>
                   <EmailOutlinedIcon
                     style={{ color: "white", fontSize: "20px" }}
                   />
-                  <Typography
-                    variant="body1"
-                    color={theme.extraBackgrounds.grayColor}
-                    sx={{ fontSize: "20px", textDecoration: "underline" }}
-                  >
-                    info@rrt.com
-                  </Typography>
+                  <a href={`mailto:${EMAIL}`}>
+                    <Typography
+                      variant="body1"
+                      color={theme.extraBackgrounds.grayColor}
+                      sx={{ fontSize: "20px", textDecoration: "underline" }}
+                    >
+                      {EMAIL}
+                    </Typography>
+                  </a>
                 </Line>
               </DataContainer>
             </GridItem>

@@ -1,5 +1,5 @@
-import { Formik, Field, ErrorMessage, useFormik, FieldProps } from 'formik'
-import { Typography, Button, TextField, Autocomplete } from '@mui/material'
+import { Formik, Field, ErrorMessage, useFormik, FieldProps } from "formik";
+import { Typography, Button, TextField, Autocomplete } from "@mui/material";
 import {
   CustomContainer,
   CustomFormContainer,
@@ -7,29 +7,29 @@ import {
   CustomTextField,
   CustomErrorMessage,
   CheckboxesContainer,
-} from './styled'
-import { validateEmail, validationSchema } from './utils'
-import { FormValues } from '../../Types'
-import CustomCheckbox from '../CustomCheckbox'
+} from "./styled";
+import { validateEmail, validationSchema } from "./utils";
+import { FormValues } from "../../Types";
+import CustomCheckbox from "../CustomCheckbox";
 
 const CustomForm = () => {
   const handleSubmit = (values: FormValues) => {
-    console.log(values) // TODO add logic
-  }
+    console.log(values); // TODO add logic
+  };
 
   const formik = useFormik({
     initialValues: {
-      name: '',
-      email: '',
-      phoneNumber: '',
-      comments: '',
+      name: "",
+      email: "",
+      phoneNumber: "",
+      comments: "",
       materials: [],
       providingMaterials: false,
       needRecommendation: false,
     },
     validationSchema: validationSchema,
     onSubmit: handleSubmit,
-  })
+  });
 
   return (
     <CustomContainer>
@@ -113,12 +113,12 @@ const CustomForm = () => {
                   multiple
                   fullWidth
                   id="tags-outlined"
-                  options={['Test1', 'Test2']}
+                  options={["Test1", "Test2"]}
                   getOptionLabel={(option) => option}
                   filterSelectedOptions
                   value={formik.values.materials}
                   onChange={(event, value) => {
-                    formik.setFieldValue('materials', value) // Update the form field value
+                    formik.setFieldValue("materials", value); // Update the form field value
                   }}
                   renderInput={(params) => (
                     <TextField
@@ -150,7 +150,7 @@ const CustomForm = () => {
                 checked={formik.values.providingMaterials}
                 onChange={(event) =>
                   formik.setFieldValue(
-                    'providingMaterials',
+                    "providingMaterials",
                     event.target.checked
                   )
                 }
@@ -160,7 +160,7 @@ const CustomForm = () => {
                 checked={formik.values.needRecommendation}
                 onChange={(event) =>
                   formik.setFieldValue(
-                    'needRecommendation',
+                    "needRecommendation",
                     event.target.checked
                   )
                 }
@@ -174,7 +174,7 @@ const CustomForm = () => {
         )}
       </Formik>
     </CustomContainer>
-  )
-}
+  );
+};
 
-export default CustomForm
+export default CustomForm;
