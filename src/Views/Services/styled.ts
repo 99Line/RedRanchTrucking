@@ -22,6 +22,7 @@ export const CustomTypography = styled(Typography)`
   font-size: 20px;
   font-style: normal;
   font-weight: 300;
+  line-height: 40px;
 `;
 
 export const CheckCustom = styled(CheckIcon)({

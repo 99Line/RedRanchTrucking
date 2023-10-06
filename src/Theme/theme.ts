@@ -32,7 +32,7 @@ export const theme = createTheme({
     fontFamily: "Roboto, sans-serif",
     h1: {
       color: "#323232",
-      fontSize: "40px",
+      fontSize: "30px",
       fontStyle: "normal",
       fontWeight: 700,
       lineHeight: "133.4%",
@@ -45,10 +45,10 @@ export const theme = createTheme({
       lineHeight: "36px",
     },
     body1: {
-      fontSize: "20px",
-      fontWeight: 600,
+      fontSize: "16px",
+      fontWeight: 500,
       fontStyle: "normal",
-      lineHeight: "30px",
+      color: "#00000099",
     },
     body2: {},
   },

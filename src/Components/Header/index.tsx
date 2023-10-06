@@ -46,7 +46,7 @@ export default function Header() {
                     <Typography
                       variant="body1"
                       color={theme.extraBackgrounds.grayColor}
-                      sx={{ fontSize: "20px" }}
+                      sx={{ fontSize: "20px", fontWeight: "600" }}
                     >
                       {CELPHONE}
                     </Typography>
@@ -61,7 +61,11 @@ export default function Header() {
                     <Typography
                       variant="body1"
                       color={theme.extraBackgrounds.grayColor}
-                      sx={{ fontSize: "20px", textDecoration: "underline" }}
+                      sx={{
+                        fontSize: "20px",
+                        textDecoration: "underline",
+                        fontWeight: "600",
+                      }}
                     >
                       {EMAIL}
                     </Typography>

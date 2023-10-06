@@ -1,5 +1,11 @@
 import { Formik, Field, ErrorMessage, useFormik, FieldProps } from "formik";
-import { Typography, Button, TextField, Autocomplete } from "@mui/material";
+import {
+  Typography,
+  Button,
+  TextField,
+  Autocomplete,
+  Grid,
+} from "@mui/material";
 import {
   CustomContainer,
   CustomFormContainer,
@@ -11,11 +17,15 @@ import {
 import { validateEmail, validationSchema } from "./utils";
 import { FormValues } from "../../Types";
 import CustomCheckbox from "../CustomCheckbox";
+import { useForm } from "Utils/mixins";
+import { useEffect } from "react";
 
 const CustomForm = () => {
   const handleSubmit = (values: FormValues) => {
     console.log(values); // TODO add logic
   };
+
+  const formSize = useForm();
 
   const formik = useFormik({
     initialValues: {
@@ -30,6 +40,10 @@ const CustomForm = () => {
     validationSchema: validationSchema,
     onSubmit: handleSubmit,
   });
+
+  useEffect(() => {
+    console.log(formSize);
+  }, [formSize]);
 
   return (
     <CustomContainer>
@@ -47,6 +61,7 @@ const CustomForm = () => {
         {({ errors, touched }) => (
           <CustomFormContainer>
             <Field
+              size="small"
               name="name"
               as={CustomTextField}
               label="Name"
@@ -65,6 +80,7 @@ const CustomForm = () => {
               value={formik.values.name}
             />
             <Field
+              size="small"
               name="phoneNumber"
               as={CustomTextField}
               label="Phone Number"
@@ -92,6 +108,7 @@ const CustomForm = () => {
               fullWidth
               margin="normal"
               validate={validateEmail}
+              size="small"
               helperText={
                 <ErrorMessage
                   name="email"
@@ -125,6 +142,7 @@ const CustomForm = () => {
                       {...params}
                       label="Materials"
                       variant="outlined"
+                      size="small"
                     />
                   )}
                 />
@@ -142,29 +160,36 @@ const CustomForm = () => {
               variant="outlined"
               id="multilineField"
               name="comments"
+              size="small"
             />
 
             <CheckboxesContainer>
-              <CustomCheckbox
-                label="Are you providing the Material?"
-                checked={formik.values.providingMaterials}
-                onChange={(event) =>
-                  formik.setFieldValue(
-                    "providingMaterials",
-                    event.target.checked
-                  )
-                }
-              />
-              <CustomCheckbox
-                label="Do you need a recommendation?"
-                checked={formik.values.needRecommendation}
-                onChange={(event) =>
-                  formik.setFieldValue(
-                    "needRecommendation",
-                    event.target.checked
-                  )
-                }
-              />
+              <Grid container>
+                <Grid item xs={formSize ? 12 : 6}>
+                  <CustomCheckbox
+                    label="Are you providing the Material?"
+                    checked={formik.values.providingMaterials}
+                    onChange={(event) =>
+                      formik.setFieldValue(
+                        "providingMaterials",
+                        event.target.checked
+                      )
+                    }
+                  />
+                </Grid>
+                <Grid item xs={formSize ? 12 : 6}>
+                  <CustomCheckbox
+                    label="Do you need a recommendation?"
+                    checked={formik.values.needRecommendation}
+                    onChange={(event) =>
+                      formik.setFieldValue(
+                        "needRecommendation",
+                        event.target.checked
+                      )
+                    }
+                  />
+                </Grid>
+              </Grid>
             </CheckboxesContainer>
 
             <Button fullWidth type="submit" variant="contained" color="primary">

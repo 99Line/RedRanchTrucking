@@ -7,29 +7,43 @@ import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import { Typography } from "@mui/material";
 import { theme } from "Theme/theme";
 import { info } from "Utils/strings";
+import { useMobile } from "Utils/mixins";
 
 const { ADDRESS, CELPHONE, EMAIL } = info;
 
 const Footer = () => {
+  const mobile = useMobile();
+
   return (
     <FooterContainer>
-      <DataContainer>
+      <DataContainer
+        style={{
+          padding: mobile ? "2rem 0px 0px 2rem" : "3.625rem 0px 0px 5rem",
+        }}
+      >
         <Typography variant="h3" color={theme.extraBackgrounds.burgundyColor}>
           Red Ranch Trucking LLC
         </Typography>
         <Line>
-          <CopyrightOutlinedIcon style={{ color: "white" }} />
-          <Typography variant="body1" color={theme.extraBackgrounds.grayColor}>
+          <CopyrightOutlinedIcon style={{ color: "white", fontSize: "20px" }} />
+          <Typography
+            variant="body1"
+            color={theme.extraBackgrounds.grayColor}
+            sx={{ fontSize: "20px", fontWeight: "600" }}
+          >
             Red Ranch Trucking LLC
           </Typography>
         </Line>
         <Line>
-          <LocalPhoneOutlinedIcon style={{ color: "white" }} />
+          <LocalPhoneOutlinedIcon
+            style={{ color: "white", fontSize: "20px" }}
+          />
 
           <a href={`tel:${EMAIL}`} style={{ textDecoration: "none" }}>
             <Typography
               variant="body1"
               color={theme.extraBackgrounds.grayColor}
+              sx={{ fontSize: "20px", fontWeight: "600" }}
             >
               {/*TODO Add links */}
               {CELPHONE}
@@ -37,11 +51,15 @@ const Footer = () => {
           </a>
         </Line>
         <Line>
-          <EmailOutlinedIcon style={{ color: "white" }} />
+          <EmailOutlinedIcon style={{ color: "white", fontSize: "20px" }} />
           <a href={`mailto:${EMAIL}`}>
             <Typography
               variant="body1"
-              sx={{ textDecoration: "underline" }}
+              sx={{
+                textDecoration: "underline",
+                fontSize: "20px",
+                fontWeight: "600",
+              }}
               color={theme.extraBackgrounds.grayColor}
             >
               {EMAIL}
@@ -50,8 +68,12 @@ const Footer = () => {
         </Line>
         <Line>
           {/*TODO Add links */}
-          <PlaceOutlinedIcon style={{ color: "white" }} />
-          <Typography variant="body1" color={theme.extraBackgrounds.grayColor}>
+          <PlaceOutlinedIcon style={{ color: "white", fontSize: "20px" }} />
+          <Typography
+            variant="body1"
+            color={theme.extraBackgrounds.grayColor}
+            sx={{ fontSize: "20px", fontWeight: "600" }}
+          >
             {ADDRESS}
           </Typography>
         </Line>
