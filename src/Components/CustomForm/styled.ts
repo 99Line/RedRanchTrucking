@@ -1,45 +1,54 @@
-import styled from '@emotion/styled'
-import { Container, TextField } from '@mui/material'
-import { Form } from 'formik'
+import styled from "@emotion/styled";
+import { TextField } from "@mui/material";
+import { Form } from "formik";
 
-export const CustomContainer = styled(Container)`
+export const CustomContainer = styled.div`
   padding: 16px;
-  width: 34.5rem;
-`
+  max-width: 500px;
+  width: 100%;
+  margin-left: auto;
+  box-sizing: border-box;
+  margin-right: auto;
+  display: block;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #ffffff;
+  border-radius: 21px;
+`;
 
 export const TitleContainer = styled.div`
   display: flex;
   align-items: center;
   align-self: stretch;
-`
+`;
 
 export const CustomFormContainer = styled(Form)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   align-self: stretch;
-  gap: 16px;
+  gap: 12px;
   padding-top: 16px;
-`
+`;
 export const CustomTextField = styled(TextField)`
   && {
-    font-family: 'cursive'; //sans-serif; /* Replace with your custom font */
+    font-family: Roboto; //sans-serif; /* Replace with your custom font */
   }
   border-radius: 20px;
-  font-size: 8px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; /* 150% */
+  /* 150% */
   letter-spacing: 0.15px;
-`
+`;
 
 export const CustomErrorMessage = styled.div`
   color: red;
-`
+`;
 export const CheckboxesContainer = styled.div`
   width: 100%;
   padding-left: 7px;
   display: flex;
   flex-direction: row;
   gap: 5px;
-`
+`;
