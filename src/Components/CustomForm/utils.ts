@@ -48,3 +48,17 @@ export const createPhoneNumberMask = () => {
     /\d/,
   ]
 }
+
+export const materials: string[] = [
+  'ABC',
+  'Quarter minus',
+  'Fill dirt',
+  '3/8 chips/rocks',
+  'Decorative rock',
+  'Gravel',
+  'Other',
+]
+
+export const formatMaterialsList = (materials: string[]): string => {
+  return materials.length === 0 ? 'No materials selected' : materials.join(', ')
+}
