@@ -28,11 +28,11 @@ export default function Services() {
         </Line>
         <Line>
           <CheckCustom />
-          <CustomTypography>Dirty Removal</CustomTypography>
+          <CustomTypography>Dirt Removal</CustomTypography>
         </Line>
         <Line>
           <CheckCustom />
-          <CustomTypography>Dirty Delivery</CustomTypography>
+          <CustomTypography>Dirt Delivery</CustomTypography>
         </Line>
         <Line>
           <CheckCustom />
