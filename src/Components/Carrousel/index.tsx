@@ -15,15 +15,15 @@ export default function Carrousel() {
 
   return (
     <ContainerBox>
-      <Image src={images[page - 1].img} alt="black and white truck" />
-      <Stack spacing={2} sx={{ position: "absolute", bottom: "10px" }}>
+      <Image src={images[1].img} alt="black and white truck" />
+      {/* <Stack spacing={2} sx={{ position: "absolute", bottom: "10px" }}>
         <Pagination
           count={2}
           page={page}
           onChange={handleChange}
           color="primary"
         />
-      </Stack>
+      </Stack> */}
     </ContainerBox>
   );
 }

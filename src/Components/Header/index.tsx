@@ -9,6 +9,7 @@ import {
   BorderBox,
   Line,
   DataContainer,
+  ContainerBoxHome,
 } from './styled'
 import Grid from '@mui/material/Grid'
 import { Typography } from '@mui/material'
@@ -17,14 +18,19 @@ import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined'
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined'
 import { theme } from 'Theme/theme'
 import { info } from 'Utils/strings'
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const { /*ADDRESS, */ CELPHONE, EMAIL } = info
 
 export default function Header() {
   const mobile = useMobile()
+  const location = useLocation().pathname;
+
+
 
   return (
-    <ContainerBox>
+    <ContainerBoxHome height={location}>
       <SubContainerBox>
         <Grid container spacing={2}>
           <GridItem
@@ -79,7 +85,7 @@ export default function Header() {
       <BorderBox content={mobile ? 'center' : undefined}>
         <Tabs />
       </BorderBox>
-      <Carrousel></Carrousel>
-    </ContainerBox>
+     {location === "/" ||  <Carrousel></Carrousel>}
+    </ContainerBoxHome>
   )
 }

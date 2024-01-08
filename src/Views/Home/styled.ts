@@ -5,16 +5,16 @@ export const Image = styled.img`
   min-height: 80px;
   width: 100%;
   height: auto;
-  max-width: 600px;
-  max-height: 400px;
+  
 `;
 
 export const ImageContainer = styled.div`
-  padding: 40px 0;
+
+flex: 1 1 auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  overflow: hidden;
+  min-height: 300px;
+  position: relative;
 `;
 
 export const FormContainer = styled.div({
