@@ -30,7 +30,7 @@ export default function Header() {
 
 
   return (
-    <ContainerBoxHome height={location}>
+    <ContainerBoxHome >
       <SubContainerBox>
         <Grid container spacing={2}>
           <GridItem
@@ -85,7 +85,7 @@ export default function Header() {
       <BorderBox content={mobile ? 'center' : undefined}>
         <Tabs />
       </BorderBox>
-     {location === "/" ||  <Carrousel></Carrousel>}
+    <Carrousel/>
     </ContainerBoxHome>
   )
 }
