@@ -58,7 +58,7 @@ const CustomForm = () => {
   }
 
   var templateParams = {
-    message: tellUsMore,
+    message: tellUsMore.length === 0 ? 'No description provided' : tellUsMore,
     list_items: formatMaterialsList(selectedMaterials),
     from_name: name,
     phone_number: phoneNumber,
