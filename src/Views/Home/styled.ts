@@ -37,7 +37,13 @@ export const TitleCustomTypography = styled(Typography)`
   font-size: 40px;
   font-style: normal;
   font-weight: 800;
-  line-height: 22px;
+  line-height: 50px;
   padding-top: 20px;
-  padding-bottom: 20px;
 `;
+
+export const CustomCard = styled.div({
+    background: 'white',
+    borderRadius: '21px',
+    width: '95%',
+justifyContent: 'center'
+})
