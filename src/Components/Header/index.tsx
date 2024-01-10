@@ -1,6 +1,6 @@
-import Carrousel from "Components/Carrousel";
-import Logo from "Assets/logo.png";
-import Tabs from "Components/Tabs";
+import Carrousel from 'Components/Carrousel'
+import Logo from 'Assets/logo.png'
+import Tabs from 'Components/Tabs'
 import {
   ContainerBox,
   SubContainerBox,
@@ -9,44 +9,50 @@ import {
   BorderBox,
   Line,
   DataContainer,
-} from "./styled";
-import Grid from "@mui/material/Grid";
-import { Typography } from "@mui/material";
-import { useMobile } from "Utils/mixins";
-import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
-import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import { theme } from "Theme/theme";
-import { info } from "Utils/strings";
+  ContainerBoxHome,
+} from './styled'
+import Grid from '@mui/material/Grid'
+import { Typography } from '@mui/material'
+import { useMobile } from 'Utils/mixins'
+import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined'
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined'
+import { theme } from 'Theme/theme'
+import { info } from 'Utils/strings'
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
-const { ADDRESS, CELPHONE, EMAIL } = info;
+const { /*ADDRESS, */ CELPHONE, EMAIL } = info
 
 export default function Header() {
-  const mobile = useMobile();
+  const mobile = useMobile()
+  const location = useLocation().pathname;
+
+
 
   return (
-    <ContainerBox>
+    <ContainerBoxHome >
       <SubContainerBox>
         <Grid container spacing={2}>
           <GridItem
             item
             xs={mobile ? 12 : 6}
-            content={mobile ? "center" : "start"}
+            content={mobile ? 'center' : 'start'}
           >
             <Image src={Logo} alt="Red Ranch Trucking Logo" />
           </GridItem>
           {mobile || (
-            <GridItem item xs={6} content={"end"}>
+            <GridItem item xs={6} content={'end'}>
               <DataContainer>
                 {/*TODO Add links */}
                 <Line>
                   <LocalPhoneOutlinedIcon
-                    style={{ color: "white", fontSize: "20px" }}
+                    style={{ color: 'white', fontSize: '20px' }}
                   />
-                  <a href={`tel:${EMAIL}`} style={{ textDecoration: "none" }}>
+                  <a href={`tel:${EMAIL}`} style={{ textDecoration: 'none' }}>
                     <Typography
                       variant="body1"
                       color={theme.extraBackgrounds.grayColor}
-                      sx={{ fontSize: "20px", fontWeight: "600" }}
+                      sx={{ fontSize: '20px', fontWeight: '600' }}
                     >
                       {CELPHONE}
                     </Typography>
@@ -55,16 +61,16 @@ export default function Header() {
                 {/*TODO Add links */}
                 <Line>
                   <EmailOutlinedIcon
-                    style={{ color: "white", fontSize: "20px" }}
+                    style={{ color: 'white', fontSize: '20px' }}
                   />
                   <a href={`mailto:${EMAIL}`}>
                     <Typography
                       variant="body1"
                       color={theme.extraBackgrounds.grayColor}
                       sx={{
-                        fontSize: "20px",
-                        textDecoration: "underline",
-                        fontWeight: "600",
+                        fontSize: '20px',
+                        textDecoration: 'underline',
+                        fontWeight: '600',
                       }}
                     >
                       {EMAIL}
@@ -76,10 +82,10 @@ export default function Header() {
           )}
         </Grid>
       </SubContainerBox>
-      <BorderBox content={mobile ? "center" : undefined}>
+      <BorderBox content={mobile ? 'center' : undefined}>
         <Tabs />
       </BorderBox>
-      <Carrousel></Carrousel>
-    </ContainerBox>
-  );
+    <Carrousel/>
+    </ContainerBoxHome>
+  )
 }

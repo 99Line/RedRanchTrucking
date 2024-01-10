@@ -8,6 +8,12 @@ export const ContainerBox = styled(Box)`
   display: flex;
   flex-flow: column;
 `;
+export const ContainerBoxHome = styled(Box)((props) => ({
+  background: theme.extraBackgrounds.blackColor,
+  height: props.height === '/' ? 'auto': '100vh',
+  display: 'flex',
+  flexFlow: 'column',
+}));
 
 export const SubContainerBox = styled(Box)`
   margin-left: 5vw;

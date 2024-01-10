@@ -1,26 +1,64 @@
-import Grid from "@mui/material/Grid";
-import CustomForm from "Components/CustomForm";
-import { useMobile } from "Utils/mixins";
-import Truck from "Assets/truck.png";
-import Card from "Components/Card";
-import { Image, FormContainer, ImageContainer } from "./styled";
+import Grid from '@mui/material/Grid'
+import CustomForm from 'Components/CustomForm'
+import { useMobile } from 'Utils/mixins'
+import Truck from 'Assets/truck.png'
+//import Card from "Components/Card";
+import { Image, FormContainer, ImageContainer, SubCustomTypography, TitleCustomTypography, CustomCard } from './styled'
+import Image2 from "Assets/Image2.jpeg";
+import { ServicesContainer, Line } from "../Services/styled";
+import { CheckCustom } from "../Services/styled";
+import { CustomTypography } from "../Services/styled";
+import Card from 'Components/Card'
 
 const Home = () => {
-  const mobile = useMobile();
+  const mobile = useMobile()
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={mobile ? 12 : 7} sx={{ display: "flex" }}>
-        <ImageContainer>
-          <Image src={Truck} alt="Red Ranch Trucking Logo" />
-        </ImageContainer>
+    <Grid container spacing={0}>
+      <Grid item xs={mobile ? 12 : 5} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', paddingLeft: '30px' }}>
+        <CustomCard>
+          <TitleCustomTypography>
+            Serving Arizona since 2005
+          </TitleCustomTypography>
+        <Line>
+          <CheckCustom />
+          <CustomTypography>Buckeye</CustomTypography>
+        </Line>
+      <Line>
+          <CheckCustom />
+          <CustomTypography>Tonopah</CustomTypography>
+        </Line>
+        <Line>
+          <CheckCustom />
+          <CustomTypography>Avondale</CustomTypography>
+        </Line>
+        <Line>
+          <CheckCustom />
+          <CustomTypography>Goodyear</CustomTypography>
+        </Line>
+        <Line>
+          <CheckCustom />
+          <CustomTypography>
+          Surprise
+          </CustomTypography>
+        </Line>
+        <Line>
+          <CheckCustom />
+          <CustomTypography>Waddel</CustomTypography>
+        </Line>
+        <Line>
+          <CheckCustom />
+          <CustomTypography>Tolleson</CustomTypography>
+        </Line>
+        <SubCustomTypography>Local Small Business</SubCustomTypography>
+        </CustomCard>
       </Grid>
-      <Grid item xs={mobile ? 12 : 5}>
+      <Grid item xs={mobile ? 12 : 7}>
         <FormContainer>
           <CustomForm />
         </FormContainer>
       </Grid>
     </Grid>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
