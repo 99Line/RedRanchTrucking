@@ -3,7 +3,7 @@ import CustomForm from 'Components/CustomForm'
 import { useMobile } from 'Utils/mixins'
 import Truck from 'Assets/truck.png'
 //import Card from "Components/Card";
-import { Image, FormContainer, ImageContainer, SubCustomTypography, TitleCustomTypography } from './styled'
+import { Image, FormContainer, ImageContainer, SubCustomTypography, TitleCustomTypography, CustomCard } from './styled'
 import Image2 from "Assets/Image2.jpeg";
 import { ServicesContainer, Line } from "../Services/styled";
 import { CheckCustom } from "../Services/styled";
@@ -14,8 +14,8 @@ const Home = () => {
   const mobile = useMobile()
   return (
     <Grid container spacing={0}>
-      <Grid item xs={mobile ? 12 : 7} sx={{ display: 'flex', margin: 'auto' }}>
-        <Card>
+      <Grid item xs={mobile ? 12 : 5} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', paddingLeft: '30px' }}>
+        <CustomCard>
           <TitleCustomTypography>
             Serving Arizona since 2005
           </TitleCustomTypography>
@@ -50,9 +50,9 @@ const Home = () => {
           <CustomTypography>Tolleson</CustomTypography>
         </Line>
         <SubCustomTypography>Local Small Business</SubCustomTypography>
-        </Card>
+        </CustomCard>
       </Grid>
-      <Grid item xs={mobile ? 12 : 5}>
+      <Grid item xs={mobile ? 12 : 7}>
         <FormContainer>
           <CustomForm />
         </FormContainer>
