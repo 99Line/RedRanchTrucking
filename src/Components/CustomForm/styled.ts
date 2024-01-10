@@ -4,6 +4,7 @@ import { TextField } from '@mui/material'
 export const CustomContainer = styled.div`
   padding: 16px;
   max-width: 500px;
+  min-height: 400px;
   width: 100%;
   margin-left: auto;
   box-sizing: border-box;

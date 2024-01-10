@@ -27,6 +27,7 @@ const CustomForm = () => {
   const [needRecommendation, setNeedRecommendation] = useState(false)
   const [providingMaterial, setProvidingMaterial] = useState(false)
   const [tellUsMore, setTellUsMore] = useState<string>('')
+  const [isMailSent, setIsMailSent] = useState<boolean>(true)
   const [errorName, setErrorName] = useState(false)
   const [errorPhoneNumber, setErrorPhoneNumber] = useState(false)
   const formSize = useForm()
@@ -86,7 +87,6 @@ const CustomForm = () => {
       )
       .then(
         (result) => {
-          console.log(result)
           setName('')
           setEmail('')
           setPhoneNumber('')
@@ -94,6 +94,7 @@ const CustomForm = () => {
           setSelectedMaterials([])
           setProvidingMaterial(false)
           setNeedRecommendation(false)
+          setIsMailSent(true)
         },
         (error) => {
           console.log(error.text)
@@ -103,7 +104,122 @@ const CustomForm = () => {
   useEffect(() => {}, [formSize, selectedMaterials])
   return (
     <CustomContainer>
-      <TitleContainer>
+      {isMailSent ? (
+        <div>
+          <TitleContainer>
+            <Typography variant="h1" component="h2">
+              We will contact you soon!
+            </Typography>
+          </TitleContainer>
+          <p>Our team will reach you as soon as possible.</p>
+          <p>Thank you!</p>
+          <Button
+            onClick={() => setIsMailSent(false)}
+            fullWidth
+            style={{ marginTop: '50%' }}
+            variant="contained"
+            color="primary"
+          >
+            Send another mail
+          </Button>
+        </div>
+      ) : (
+        <div>
+          <TitleContainer>
+            <Typography variant="h1" component="h2">
+              Get a quote today!
+            </Typography>
+          </TitleContainer>
+          <CustomFormContainer onSubmit={handleSubmit}>
+            <StyledInputContainer>
+              <TextField
+                fullWidth
+                label="Name"
+                value={name}
+                onChange={handleNameChange}
+              />
+              {errorName && (
+                <StyledErrorContainer>Add a name</StyledErrorContainer>
+              )}
+            </StyledInputContainer>
+            <StyledInputContainer>
+              <TextField
+                fullWidth
+                type="tel"
+                label="Phone Number"
+                value={phoneNumber}
+                onChange={handlePhoneNumberChange}
+              />
+              {errorPhoneNumber && (
+                <StyledErrorContainer>Add a phone number</StyledErrorContainer>
+              )}
+            </StyledInputContainer>
+            <TextField
+              fullWidth
+              label="Email"
+              value={email}
+              onChange={handleEmailChange}
+            />
+            <Autocomplete
+              multiple
+              fullWidth
+              id="tags-outlined"
+              options={materials}
+              getOptionLabel={(option) => option}
+              //filterSelectedOptions
+              isOptionEqualToValue={(option, newValue) => {
+                return option === newValue
+              }}
+              value={selectedMaterials}
+              onChange={handleAutocompleteChange}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  label="Materials"
+                  variant="outlined"
+                  size="medium"
+                />
+              )}
+            />
+            <TextField
+              fullWidth
+              label="Tell Us More"
+              multiline
+              rows={4}
+              value={tellUsMore}
+              onChange={handleTellUsMoreChange}
+            />
+            <CheckboxesContainer>
+              <Grid container>
+                <Grid item xs={formSize ? 12 : 6}>
+                  <CustomCheckbox
+                    onChange={() => setProvidingMaterial(!providingMaterial)}
+                    checked={providingMaterial}
+                    label="Are you providing the Material?"
+                  />
+                </Grid>
+                <Grid item xs={formSize ? 12 : 6}>
+                  <CustomCheckbox
+                    label="Do you need a recommendation?"
+                    onChange={() => setNeedRecommendation(!needRecommendation)}
+                    checked={needRecommendation}
+                  />
+                </Grid>
+              </Grid>
+            </CheckboxesContainer>
+            <Button
+              onClick={sendMail}
+              fullWidth
+              type="submit"
+              variant="contained"
+              color="primary"
+            >
+              Submit
+            </Button>
+          </CustomFormContainer>
+        </div>
+      )}
+      {/*<TitleContainer>
         <Typography variant="h1" component="h2">
           Get a quote today!
         </Typography>
@@ -192,7 +308,7 @@ const CustomForm = () => {
         >
           Submit
         </Button>
-      </CustomFormContainer>
+      </CustomFormContainer>*/}
     </CustomContainer>
   )
 }
