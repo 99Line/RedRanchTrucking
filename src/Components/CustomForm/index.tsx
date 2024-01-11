@@ -27,7 +27,7 @@ const CustomForm = () => {
   const [needRecommendation, setNeedRecommendation] = useState(false)
   const [providingMaterial, setProvidingMaterial] = useState(false)
   const [tellUsMore, setTellUsMore] = useState<string>('')
-  const [isMailSent, setIsMailSent] = useState<boolean>(true)
+  const [isMailSent, setIsMailSent] = useState<boolean>(false)
   const [errorName, setErrorName] = useState(false)
   const [errorPhoneNumber, setErrorPhoneNumber] = useState(false)
   const formSize = useForm()
