@@ -48,7 +48,7 @@ export default function Header() {
                   <LocalPhoneOutlinedIcon
                     style={{ color: 'white', fontSize: '20px' }}
                   />
-                  <a href={`tel:${EMAIL}`} style={{ textDecoration: 'none' }}>
+                  <a href={`tel:${CELPHONE}`} style={{ textDecoration: 'none' }}>
                     <Typography
                       variant="body1"
                       color={theme.extraBackgrounds.grayColor}
